@@ -1,4 +1,4 @@
-extends Spatial
+extends Node3D
 
 var camera
 var camera_speed = 2.0
@@ -10,7 +10,7 @@ var value = 0
 var audio
 
 func set_sun_glare(value):
-	$post_fx_1.material.set_shader_param("glare_amount", value)
+	$post_fx_1.material.set_shader_parameter("glare_amount", value)
 
 func _ready():
 	camera = $camera
@@ -20,7 +20,7 @@ func _ready():
 	camera.transform.origin = camera_start_pos
 
 func _input(event):
-	if (event is InputEventMouseMotion and event.button_mask & BUTTON_MASK_RIGHT):
+	if (event is InputEventMouseMotion and event.button_mask & MOUSE_BUTTON_MASK_RIGHT):
 		var delta = get_process_delta_time()
 		var turn_to = Vector2(event.relative.x * camera_mouse_turn_speed * delta, event.relative.y * camera_mouse_turn_speed * delta)
 		camera.look_at(camera.transform.origin - camera.transform.basis[2] + camera.transform.basis[0] * turn_to.x - camera.transform.basis[1] * turn_to.y, Vector3.UP)

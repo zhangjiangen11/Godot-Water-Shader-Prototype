@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/ocean_waves_crisp.wav-7a1063a9dd655bab8eec8224ef12a488.sample"
+type="AudioStreamWAV"
+uid="uid://dbpr7nw4fi64p"
+path="res://.godot/imported/ocean_waves_crisp.wav-7a1063a9dd655bab8eec8224ef12a488.sample"
 
 [deps]
 
 source_file="res://sounds/level/ocean/ocean_waves_crisp.wav"
-dest_files=[ "res://.import/ocean_waves_crisp.wav-7a1063a9dd655bab8eec8224ef12a488.sample" ]
+dest_files=["res://.godot/imported/ocean_waves_crisp.wav-7a1063a9dd655bab8eec8224ef12a488.sample"]
 
 [params]
 
@@ -17,5 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=true
 edit/normalize=true
-edit/loop=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
 compress/mode=0

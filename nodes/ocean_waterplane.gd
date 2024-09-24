@@ -1,8 +1,8 @@
-extends MeshInstance
+extends MeshInstance3D
 
 var camera
 var value = 0
-export(float) var ocean_height = 0.0
+@export var ocean_height: float = 0.0
 
 func _ready():
 	camera = get_node("../../game_camera/camera")
