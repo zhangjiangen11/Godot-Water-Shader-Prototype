@@ -74,7 +74,7 @@ func get_files_in_directory(path):
 	return files
 
 func set_water_style(value):
-	var style_path = "res://textures/water/gradients"
+	var style_path = "res://addons/Godot-Water-Shader-Prototype/textures/water/gradients"
 	var style_list = get_files_in_directory(style_path)
 	var gradient = GradientTexture2D.new()
 	

@@ -74,7 +74,7 @@ func _create_sampler_uniform_set(texture_rd: RID, set : int) -> RID:
 func _initialize_compute_code(init_with_texture_size: Vector2i, flow_texture : Texture) -> void:
 	rd = RenderingServer.get_rendering_device()
 
-	shader = rd.shader_create_from_spirv(load("res://shaders/vector_map.glsl").get_spirv())
+	shader = rd.shader_create_from_spirv(load("res://addons/Godot-Water-Shader-Prototype/shaders/vector_map.glsl").get_spirv())
 	pipeline = rd.compute_pipeline_create(shader)
 	
 	var sampler_state : RDSamplerState = RDSamplerState.new()
