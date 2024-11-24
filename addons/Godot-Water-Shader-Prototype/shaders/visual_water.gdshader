@@ -18,6 +18,7 @@ uniform sampler2D water_highlight_map : source_color;
 uniform sampler2D DEPTH_TEXTURE : hint_depth_texture, filter_linear_mipmap;
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 
+uniform float uv_scale = 1.0;
 uniform float gerstner_height = 0.4;
 uniform float gerstner_normal = 0.25;
 uniform float gerstner_stretch = 1.5;
@@ -92,7 +93,7 @@ vec3 get_normal(sampler2D tex, vec2 uv, float offset, float intensity) {
 }
 
 void vertex() {
-	vec2 uv = UV + MODEL_MATRIX[3].xz * 0.25;
+	vec2 uv = (UV * uv_scale) + MODEL_MATRIX[3].xz * 0.25;
 
 	vec2 uv_gerstner = uv * gerstner_tiling + TIME * gerstner_speed;
 	vec2 uv_gerstner_2 = uv_gerstner * gerstner_2_tiling + TIME * gerstner_2_speed;
@@ -110,7 +111,7 @@ void vertex() {
 }
 
 void fragment() {
-	vec2 uv = UV + MODEL_MATRIX[3].xz * 0.25;
+	vec2 uv = (UV * uv_scale) + MODEL_MATRIX[3].xz * 0.25;
 	vec2 uv_gerstner = uv * gerstner_tiling + TIME * gerstner_speed;
 	vec2 uv_gerstner_2 = uv_gerstner * gerstner_2_tiling + TIME * gerstner_2_speed;
 
@@ -246,8 +247,8 @@ void fragment() {
 
 void light() {
 	// LAMBER DIFFUSE LIGHTING
-	float water_highlight_mask_1 = texture(water_highlight_map, ( UV - (MODEL_MATRIX[3].xz * 0.25) + TIME * 0.051031 ) ).x;
-	float water_highlight_mask_2 = texture(water_highlight_map, ( UV - (MODEL_MATRIX[3].xz * 0.25) + TIME * -0.047854) * 2.0 ).x;
+	float water_highlight_mask_1 = texture(water_highlight_map, ( (UV * uv_scale) - (MODEL_MATRIX[3].xz * 0.25) + TIME * 0.051031 ) ).x;
+	float water_highlight_mask_2 = texture(water_highlight_map, ( (UV * uv_scale) - (MODEL_MATRIX[3].xz * 0.25) + TIME * -0.047854) * 2.0 ).x;
 
 	// SUBSURFACE SCATTERING
 	float sss = clamp( smoothstep(0.65, 0.7, dot(NORMAL, VIEW) * 0.5 + 0.5 ) * smoothstep(0.5, 1.0, (dot(-LIGHT, VIEW) * 0.5 + 0.5) ) * ( dot (-VIEW_MATRIX[2].xyz, vec3(0.0, 1.0, 0.0)) * 0.5 + 0.5), 0.0, 1.0) * sss_strength;

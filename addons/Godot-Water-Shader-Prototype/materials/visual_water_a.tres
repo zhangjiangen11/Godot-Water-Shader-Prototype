@@ -36,6 +36,7 @@ shader_parameter/gerstner_height_map = ExtResource("8")
 shader_parameter/gerstner_normal_map = ExtResource("9")
 shader_parameter/detail_normal_map = ExtResource("5")
 shader_parameter/water_highlight_map = ExtResource("13")
+shader_parameter/uv_scale = 1.0
 shader_parameter/gerstner_height = 0.4
 shader_parameter/gerstner_normal = 0.25
 shader_parameter/gerstner_stretch = 1.5
