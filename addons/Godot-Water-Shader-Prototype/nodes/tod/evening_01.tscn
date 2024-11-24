@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://brwkdswgfcqfo"]
+
+[ext_resource type="Texture2D" uid="uid://bpftqxfcwcqav" path="res://addons/Godot-Water-Shader-Prototype/textures/sky/evening_01.hdr" id="1"]
+
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_7gx7k"]
+panorama = ExtResource("1")
+energy_multiplier = 0.25
+
+[sub_resource type="Sky" id="1"]
+sky_material = SubResource("PanoramaSkyMaterial_7gx7k")
+radiance_size = 6
+
+[sub_resource type="Environment" id="2"]
+background_mode = 2
+sky = SubResource("1")
+ambient_light_energy = 0.8
+tonemap_mode = 2
+ssr_enabled = true
+ssr_depth_tolerance = 100.0
+ssao_enabled = true
+ssao_radius = 10.0
+ssao_intensity = 3.0
+ssao_light_affect = 0.5
+glow_enabled = true
+fog_depth_end = 500.0
+
+[node name="evening_01" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.863191, 0.152025, -0.481445, 0, 0.953588, 0.301113, 0.504878, -0.259918, 0.823129, 0, 0, 0)
+light_color = Color(0.996078, 0.870588, 0.690196, 1)
+shadow_enabled = true
+directional_shadow_max_distance = 200.0

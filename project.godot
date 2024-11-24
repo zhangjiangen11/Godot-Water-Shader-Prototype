@@ -14,9 +14,9 @@ config/name="Water Shader Prototype"
 config/description="This is a working water shader prototype with a simplified CFD model as base. I released this shader, because many people were curious how it works. So here it is, you can take a look. Unfortunately I don't have the time to support everything. It doesn't contain and underwater shader effect, nor physics. But feel free to add to your game.
 
 The shader works only in GLES3 as the depth buffer is not fully supported in GLES2."
-run/main_scene="res://main.tscn"
+run/main_scene="res://addons/Godot-Water-Shader-Prototype/main.tscn"
 config/features=PackedStringArray("4.4")
-config/icon="res://icon.png"
+config/icon="res://addons/Godot-Water-Shader-Prototype/icon.png"
 
 [display]
 
@@ -76,5 +76,5 @@ hide_menu={
 
 [rendering]
 
-environment/defaults/default_environment="res://default_env.tres"
+environment/defaults/default_environment="res://addons/Godot-Water-Shader-Prototype/default_env.tres"
 quality/filters/anisotropic_filter_level=8

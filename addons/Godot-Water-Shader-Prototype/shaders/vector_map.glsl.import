@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://dyqpn623jwsg2"
+path="res://.godot/imported/vector_map.glsl-1db2abb1197cd8e93dd8203616bc0567.res"
+
+[deps]
+
+source_file="res://addons/Godot-Water-Shader-Prototype/shaders/vector_map.glsl"
+dest_files=["res://.godot/imported/vector_map.glsl-1db2abb1197cd8e93dd8203616bc0567.res"]
+
+[params]
+

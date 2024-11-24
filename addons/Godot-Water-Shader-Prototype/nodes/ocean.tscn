@@ -1,0 +1,22 @@
+[gd_scene load_steps=7 format=3 uid="uid://ddxbfml0mr2sa"]
+
+[ext_resource type="Material" uid="uid://xopksn64jesr" path="res://addons/Godot-Water-Shader-Prototype/materials/visual_water_a.tres" id="2"]
+[ext_resource type="ArrayMesh" uid="uid://bn2a7wjcdu02r" path="res://addons/Godot-Water-Shader-Prototype/objects/waterplane/waterplane_ultra.obj" id="3"]
+[ext_resource type="Script" uid="uid://d30deh4txp5uw" path="res://addons/Godot-Water-Shader-Prototype/nodes/ocean.gd" id="4"]
+[ext_resource type="Script" uid="uid://dh8el2qx2l2m0" path="res://addons/Godot-Water-Shader-Prototype/nodes/ocean_waterplane.gd" id="5"]
+[ext_resource type="Script" uid="uid://u7xi4d5ay7xk" path="res://addons/Godot-Water-Shader-Prototype/nodes/render_targets.gd" id="5_thw2b"]
+[ext_resource type="Texture2D" uid="uid://xqms6usqjv7i" path="res://addons/Godot-Water-Shader-Prototype/textures/default/flowmap_source_02.png" id="6_mobor"]
+
+
+[node name="ocean" type="Node3D"]
+script = ExtResource("4")
+
+[node name="waterplane" type="MeshInstance3D" parent="."]
+material_override = ExtResource("2")
+cast_shadow = 0
+mesh = ExtResource("3")
+script = ExtResource("5")
+
+[node name="render_targets" type="Node" parent="."]
+script = ExtResource("5_thw2b")
+flow_texture = ExtResource("6_mobor")
