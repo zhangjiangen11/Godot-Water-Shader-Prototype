@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ibp1ejc7f2qk"
+path="res://.godot/imported/waterplane_low.obj-809c32714f4d97a22e5a4f3fd35dfbb8.mesh"
+
+[deps]
+
+files=["res://.godot/imported/waterplane_low.obj-809c32714f4d97a22e5a4f3fd35dfbb8.mesh"]
+
+source_file="res://addons/Godot-Water-Shader-Prototype/objects/waterplane/waterplane_low.obj"
+dest_files=["res://.godot/imported/waterplane_low.obj-809c32714f4d97a22e5a4f3fd35dfbb8.mesh", "res://.godot/imported/waterplane_low.obj-809c32714f4d97a22e5a4f3fd35dfbb8.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

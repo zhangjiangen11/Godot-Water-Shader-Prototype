@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://bf11ty72qw8gm"]
+
+[ext_resource type="Script" uid="uid://envtduaeqt3i" path="res://addons/Godot-Water-Shader-Prototype/nodes/game_camera.gd" id="1"]
+[ext_resource type="AudioStream" uid="uid://dbpr7nw4fi64p" path="res://addons/Godot-Water-Shader-Prototype/sounds/level/ocean/ocean_waves_crisp.wav" id="2"]
+[ext_resource type="Texture2D" uid="uid://bv2wcskgo6ve6" path="res://addons/Godot-Water-Shader-Prototype/textures/post/lense_smudge_a.png" id="3"]
+[ext_resource type="Shader" uid="uid://245d4cxmjtbc" path="res://addons/Godot-Water-Shader-Prototype/shaders/camera_lense.gdshader" id="4"]
+
+
+[sub_resource type="ShaderMaterial" id="1"]
+shader = ExtResource("4")
+shader_parameter/glare_amount = 0.5
+shader_parameter/lenseflare_amount = 0.5
+
+[node name="game_camera" type="Node3D"]
+script = ExtResource("1")
+
+[node name="camera" type="Camera3D" parent="."]
+far = 200.0
+
+[node name="audio_waves" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2")
+unit_size = 2.0
+autoplay = true
+
+[node name="post_fx_1" type="TextureRect" parent="."]
+material = SubResource("1")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("3")
+expand_mode = 1

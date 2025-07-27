@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bn2a7wjcdu02r"
+path="res://.godot/imported/waterplane_ultra.obj-7565b1685f95d4140a4b306210537250.mesh"
+
+[deps]
+
+files=["res://.godot/imported/waterplane_ultra.obj-7565b1685f95d4140a4b306210537250.mesh"]
+
+source_file="res://addons/Godot-Water-Shader-Prototype/objects/waterplane/waterplane_ultra.obj"
+dest_files=["res://.godot/imported/waterplane_ultra.obj-7565b1685f95d4140a4b306210537250.mesh", "res://.godot/imported/waterplane_ultra.obj-7565b1685f95d4140a4b306210537250.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
